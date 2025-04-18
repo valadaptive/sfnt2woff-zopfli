@@ -2,3 +2,4 @@
 *.out
 woff2sfnt
 sfnt2woff
+*.o

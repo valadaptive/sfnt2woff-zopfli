@@ -34,5 +34,9 @@ woff2sfnt-zopfli: woff2sfnt.c $(FILES) Makefile
 		$(FILES) $< -o $@ \
 		$(LDFLAGS) $(ZOPFLI_LIBS) $(ZLIB_LIBS) -lm
 
+woff: $(FILES) Makefile
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(ZOPFLI_CFLAGS) $(ZLIB_CFLAGS) \
+		-c $(FILES) $< $(ZOPFLI_LIBS) $(ZLIB_LIBS) -lm
+
 clean:
 	$(RM) -r *.o *.dSYM sfnt2woff-zopfli woff2sfnt-zopfli *.gch *.out
